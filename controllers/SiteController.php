@@ -74,7 +74,7 @@ class SiteController extends Controller
     {
         $posts=new Posts();
         $formData=Yii::$app->request->post();
-       
+
         if($posts->load($formData))
         {
             if($posts->save())
@@ -92,6 +92,22 @@ class SiteController extends Controller
 
         return $this->render('create',['p'=>$posts] ); 
     }
+
+    public function actionView($id)
+    {
+        return $this->render('view'  ); 
+    }
+
+    public function actionUpdate()
+    {
+        return $this->render('update'  ); 
+    }
+    
+        public function actionDelete()
+    {
+        return $this->render('delete'  ); 
+    }
+
 
     /**
      * Login action.
