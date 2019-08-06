@@ -4,7 +4,6 @@ use yii\widgets\ActiveForm;
 
 
  
- 
 
 $this->title='Create';
 ?>
@@ -18,7 +17,7 @@ $this->title='Create';
  	<div class="body-content">
 
 
- 		<?php $form=ActiveForm::begin()?>
+ 		<?php $form=ActiveForm::begin()?> <!---this code would generate /yii/web/index.php?r=site%2Fcreate to call sitecontroller ----->
  		<div class='row'>
 
  			<div class='form-group'>

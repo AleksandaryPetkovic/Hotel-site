@@ -101,12 +101,18 @@ class SiteController extends Controller
         return $this->render('view', ['aView'=>$aView]  ); 
     }
 
-    public function actionUpdate()
+    public function actionUpdate($id)
     {
-        return $this->render('update'  ); 
+        $aView=Posts::findOne($id);
+
+     
+        return $this->render('update',['aView'=>$aView]  ); 
     }
     
-        public function actionDelete()
+
+
+
+    public function actionDelete()
     {
         return $this->render('delete'  ); 
     }

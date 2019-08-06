@@ -65,7 +65,7 @@ $this->title = 'Yii';
 				      		<span><?=Html::a('view',['view','id'=>$value->id],['class'=>'label label-primary'] ) ?></span>
 				      		<span><?=Html::a('update',['update','id'=>$value->id],['class'=>'label label-success']) ?></span>
 				      		<span><?=Html::a('delete' ,['delete','id'=>$value->id],['class'=>'label label-danger']) ?></span>
-				      		<!-------second param: [SITECONTROLLER FUNCION NAME, PARAMETERS]----------------->
+				      		<!-------second param: [SiteController FUNCION NAME, PARAMETERS]----------------->
 
 				      </td>
 				    </tr>
@@ -94,3 +94,5 @@ $this->title = 'Yii';
 
     </div>
 </div>
+
+

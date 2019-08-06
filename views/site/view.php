@@ -1,6 +1,19 @@
+ <?php
+use yii\helpers\html;
+ 
+
+ 
+ 
+
+$this->title='View';
+$this->params['breadcrumbs'][] = $this->title;
+?>
+
+ 
 <h1>View  </h1>
  
-<div >
+ 
+ <hr>
 
 <div class=' row col-lg-6  '>
 <ul class="list-group">
