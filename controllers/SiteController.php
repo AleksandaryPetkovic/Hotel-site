@@ -120,9 +120,20 @@ class SiteController extends Controller
 
 
 
-    public function actionDelete()
+    public function actionDelete($id)
     {
-        return $this->render('delete'  ); 
+       
+
+        $aView=Posts::findOne($id)->delete();
+
+        if($aView)
+        {
+            yii::$app->getSession()->setFlash('message',"ID:$id is already deleted");
+            return $this->redirect(['index']);
+        }
+
+
+
     }
 
 

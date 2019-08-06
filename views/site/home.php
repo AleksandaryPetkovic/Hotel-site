@@ -35,6 +35,9 @@ if(yii::$app->session->hasFlash('message'))
 
  
     </div>
+     	<div class='row'>
+ 		<span><?=Html::a('Create',['/site/create'],['class'=>'btn btn-primary'])?></span>
+ 	</div>
 
     <div class="body-content">
  	<?php
@@ -45,9 +48,7 @@ if(yii::$app->session->hasFlash('message'))
  		 
   
  	?>
- 	<div class='row'>
- 		<span><?=Html::a('Create',['/site/create'],['class'=>'btn btn-primary'])?></span>
- 	</div>
+
         <div class="row">
             
 
