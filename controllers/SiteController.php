@@ -79,7 +79,7 @@ class SiteController extends Controller
         {
             if($posts->save())
             {
-                Yii::$app->getSession()->setFlash('message','Created Successfully');
+                Yii::$app->getSession()->setFlash('message','Created Successfully');// set session: $_SESSION['message']
 
                 return $this->redirect(['index']);
             }
@@ -95,7 +95,10 @@ class SiteController extends Controller
 
     public function actionView($id)
     {
-        return $this->render('view'  ); 
+        $aView=Posts::findOne($id);
+
+
+        return $this->render('view', ['aView'=>$aView]  ); 
     }
 
     public function actionUpdate()
