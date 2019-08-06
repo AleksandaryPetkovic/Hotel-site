@@ -72,7 +72,7 @@ class SiteController extends Controller
 
     public function actionCreate()
     {
-        $posts=new Posts();
+        $posts=new Posts(); // create a new one, so $posts->save() would insert new row in database
         $formData=Yii::$app->request->post();
 
         if($posts->load($formData))
@@ -103,9 +103,17 @@ class SiteController extends Controller
 
     public function actionUpdate($id)
     {
-        $aView=Posts::findOne($id);
+    
+        $aView=Posts::findOne($id); // find a exsiting one, so $aView->save() would update the exsiting row. 
 
-     
+        if($aView->load(yii::$app->request->post())&&$aView->save())// model should call load()
+        {
+           
+           yii::$app->getSession()->setFlash('message',"ID:$id is Updated Successfully");
+           return $this->redirect(['index','id'=>$aView->id]);
+
+            
+        }
         return $this->render('update',['aView'=>$aView]  ); 
     }
     

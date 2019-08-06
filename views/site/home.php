@@ -5,10 +5,26 @@ use yii\helpers\Html;
 
 $this->title = 'Yii';
  
- print_r(yii::$app->session->getFlash('message'));
- 	
+ 
  
 ?>
+
+<?php
+
+if(yii::$app->session->hasFlash('message'))
+{
+	?>
+
+
+<div class="alert alert-dismissible alert-success">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <strong><?=yii::$app->session->getFlash('message');?></strong>  
+</div>
+
+
+<?php }?>
+
+
 <div class="site-index">
  
 
